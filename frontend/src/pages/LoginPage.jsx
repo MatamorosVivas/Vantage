@@ -16,7 +16,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:5000/api/auth/login', {
+        const response = await axios.post('https://vantage-inyd.onrender.com/api/auth/login', {
           email: formData.email,
           password: formData.password
         });
@@ -25,7 +25,7 @@ const LoginPage = () => {
         setMessage('✅ Login Successful!');
         setTimeout(() => navigate('/shop'), 1000);
       } else {
-        await axios.post('http://localhost:5000/api/auth/register', {
+        await axios.post('https://vantage-inyd.onrender.com/api/auth/register', {
           first_name: formData.first_name,
           last_name: formData.last_name,
           email: formData.email,

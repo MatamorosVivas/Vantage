@@ -33,7 +33,7 @@ const AdminPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/products', formData, {
+      const response = await axios.post('https://vantage-inyd.onrender.com/api/products', formData, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
