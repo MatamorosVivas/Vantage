@@ -95,12 +95,12 @@ const CheckoutPage = () => {
             <input type="text" name="state" placeholder="State/Province" onChange={handleChange} required className="w-1/4 p-3 border rounded-lg bg-gray-50" />
             <input type="text" name="zip_code" placeholder="ZIP" onChange={handleChange} required className="w-1/4 p-3 border rounded-lg bg-gray-50" />
           </div>
-          <input type="text" name="national_id" placeholder="DNI / National ID" onChange={handleChange} required className="w-full p-3 border rounded-lg bg-gray-50" />
+          <input type="text" name="national_id" placeholder="ID" onChange={handleChange} required className="w-full p-3 border rounded-lg bg-gray-50" />
           <div className="pt-4">
             <label className="block text-sm font-bold text-gray-700 mb-2">Shipping Method</label>
             <select name="shipping_method" onChange={handleChange} className="w-full p-3 border rounded-lg bg-gray-50 font-semibold text-gray-700">
-              <option value="Local Delivery">Local Delivery (Lima) - Included</option>
-              <option value="Shalom Agency">Shalom Agency (Provincia) - Pago en Destino</option>
+              <option value="Local Delivery">Local Delivery</option>
+              <option value="Shalom Agency">Out of province</option>
             </select>
           </div>
           <button type="submit" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-800 transition mt-6 text-lg shadow-md">
