@@ -18,10 +18,6 @@ import ReceiptPage from './pages/ReceiptPage.jsx';
 import SecurityPage from './pages/SecurityPage.jsx';
 import AddressesPage from './pages/AddressesPage.jsx';
 
-// Dummy pages for links so they don't crash
-const DummySecurity = () => <div className="text-center mt-20 dark:text-white text-2xl font-bold">Login & Security Settings (Coming Soon)</div>;
-const DummyAddresses = () => <div className="text-center mt-20 dark:text-white text-2xl font-bold">Your Saved Addresses (Coming Soon)</div>;
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,11 +32,10 @@ const router = createBrowserRouter([
       { path: "/product/:id", element: <ProductDetailsPage /> },
       { path: "/profile", element: <ProfilePage /> },
       { path: "/profile/orders", element: <OrderHistoryPage /> },
-      { path: "/profile/security", element: <DummySecurity /> },
-      { path: "/profile/addresses", element: <DummyAddresses /> },
-      { path: "/receipt/:id", element: <ReceiptPage /> },
-      { path: "/profile/security", element: <SecurityPage /> },
+      { path: "/profile/security", element: <SecurityPage /> }, 
       { path: "/profile/addresses", element: <AddressesPage /> },
+      
+      { path: "/receipt/:id", element: <ReceiptPage /> },
     ],
   },
 ]);
