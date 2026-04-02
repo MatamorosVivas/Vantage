@@ -21,8 +21,8 @@ const AddressesPage = () => {
           <span className="text-xs font-bold text-gray-500 border-b dark:border-gray-700 pb-2 mb-3">Default</span>
           <p className="font-bold text-gray-900 dark:text-white">{user.first_name}</p>
           <p className="text-gray-600 dark:text-gray-300 mt-1">123 Main St</p>
-          <p className="text-gray-600 dark:text-gray-300">Lima</p>
-          <p className="text-gray-600 dark:text-gray-300">Peru</p>
+          <p className="text-gray-600 dark:text-gray-300">Vancouver</p>
+          <p className="text-gray-600 dark:text-gray-300">Canada</p>
           
           <div className="absolute bottom-6 left-6 flex gap-4 text-blue-600 dark:text-blue-400 text-sm font-semibold">
             <button className="hover:underline">Edit</button>
