@@ -13,6 +13,8 @@ import AdminPage from './pages/AdminPage.jsx';
 import ProductDetailsPage from './pages/ProductDetailsPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 import HomePage from './pages/HomePage.jsx';
+import ReceiptPage from './pages/ReceiptPage.jsx';
+import OrderHistoryPage from './pages/OrderHistoryPage.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       { path: "/admin", element: <AdminPage /> },
       { path: "/product/:id", element: <ProductDetailsPage /> },
       { path: "/profile", element: <ProfilePage /> },
+      { path: "/profile/orders", element: <OrderHistoryPage /> },
+      { path: "/profile/security", element: <DummySecurity /> },
+      { path: "/profile/addresses", element: <DummyAddresses /> },
+      { path: "/receipt/:id", element: <ReceiptPage /> },
     ],
   },
 ]);

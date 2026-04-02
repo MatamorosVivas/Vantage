@@ -44,7 +44,7 @@ const LoginPage = () => {
     <div className="flex justify-center mt-12">
       <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md border border-gray-100">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-          {isLogin ? 'Welcome Back to Vantage' : 'Create an Account'}
+          {isLogin ? 'Welcome to Vantage' : 'Create an Account'}
         </h2>
         
         {message && <div className="mb-4 p-3 bg-blue-100 text-blue-800 rounded font-semibold text-center">{message}</div>}
