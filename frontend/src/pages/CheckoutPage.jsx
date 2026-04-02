@@ -74,8 +74,8 @@ const CheckoutPage = () => {
           <div className="pt-4">
             <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Shipping Method</label>
             <select name="shipping_method" onChange={handleChange} className="w-full p-3 border dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white font-semibold">
-              <option value="Local Delivery">Local Delivery (Canada) - Included</option>
-              <option value="Agency Pickup">Agency Pickup - Pay at Destination</option>
+              <option value="Local Delivery">Local</option>
+              <option value="Agency Pickup">Out of Province</option>
             </select>
           </div>
           <button type="submit" className="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-800 transition mt-6 text-lg shadow-md">
