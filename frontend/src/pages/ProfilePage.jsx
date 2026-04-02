@@ -15,7 +15,7 @@ const ProfilePage = () => {
           <div className="text-4xl">📦</div>
           <div>
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">Your Orders</h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Track, return, or view receipts for past purchases</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">View past purchases</p>
           </div>
         </Link>
 

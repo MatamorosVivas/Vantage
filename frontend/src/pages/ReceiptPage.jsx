@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 
 const ReceiptPage = () => {
   const { id } = useParams();
-  const [order, setOrder] = useState(null);
+  const[order, setOrder] = useState(null);
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -26,51 +26,57 @@ const ReceiptPage = () => {
     <div className="max-w-2xl mx-auto mt-10">
       <Link to="/profile/orders" className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block print:hidden">&larr; Back to Orders</Link>
       
-      <div className="bg-white dark:bg-gray-800 p-10 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-        <div className="flex justify-between items-center border-b dark:border-gray-700 pb-6 mb-6">
-          <h1 className="text-3xl font-black text-[#0F3057] dark:text-white tracking-tighter">VANTAGE.</h1>
+      {/* RECEIPT PAPER - Stays light for printing */}
+      <div className="bg-white p-10 rounded-xl shadow-lg border border-gray-200 text-gray-800">
+        
+        {/* Header */}
+        <div className="flex justify-between items-end border-b-2 border-gray-800 pb-4 mb-8">
+          <h1 className="text-4xl font-black text-gray-300 tracking-tighter">VANTAGE.</h1>
           <div className="text-right">
-            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">Receipt</h2>
-            <p className="text-sm text-gray-500 dark:text-gray-400">Date: {new Date(order.createdAt).toLocaleDateString()}</p>
+            <h2 className="text-2xl font-bold text-gray-500">Receipt</h2>
+            <p className="text-sm text-gray-500">Date: {new Date(order.createdAt).toISOString().split('T')[0]}</p>
           </div>
         </div>
 
+        {/* Order Details */}
         <div className="mb-6">
-          <p className="font-bold text-gray-800 dark:text-gray-200">Order ID:</p>
-          <p className="text-gray-600 dark:text-gray-400 font-mono text-sm">{order._id}</p>
+          <p className="font-bold text-gray-500 text-sm">Order ID:</p>
+          <p className="text-gray-800">{order._id}</p>
         </div>
 
-        <div className="mb-8">
-          <p className="font-bold text-gray-800 dark:text-gray-200">Shipping To:</p>
-          <p className="text-gray-600 dark:text-gray-400">{order.shipping_address.street}, {order.shipping_address.city}</p>
+        <div className="mb-10">
+          <p className="font-bold text-gray-500 text-sm">Shipping To:</p>
+          <p className="text-gray-800">{order.shipping_address.street}, {order.shipping_address.city}</p>
         </div>
 
+        {/* Items Table */}
         <table className="w-full text-left mb-8">
           <thead>
-            <tr className="border-b dark:border-gray-700 text-gray-800 dark:text-gray-200">
-              <th className="pb-2">Item ID</th>
-              <th className="pb-2 text-right">Qty</th>
-              <th className="pb-2 text-right">Price</th>
+            <tr className="border-b-2 border-gray-800 text-gray-500 text-sm">
+              <th className="pb-2 font-bold">Item ID</th>
+              <th className="pb-2 text-right font-bold">Qty</th>
+              <th className="pb-2 text-right font-bold">Price</th>
             </tr>
           </thead>
-          <tbody className="text-gray-600 dark:text-gray-400">
+          <tbody className="text-gray-800">
             {order.order_items.map((item, index) => (
-              <tr key={index} className="border-b dark:border-gray-700">
-                <td className="py-3 font-mono text-sm">{item.product_id}</td>
-                <td className="py-3 text-right">{item.quantity}</td>
-                <td className="py-3 text-right">S/. {item.unit_price.toFixed(2)}</td>
+              <tr key={index} className="border-b border-gray-200">
+                <td className="py-4 text-sm">{item.product_id}</td>
+                <td className="py-4 text-right">{item.quantity}</td>
+                <td className="py-4 text-right">S/. {item.unit_price.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
-        <div className="text-right text-2xl font-black text-gray-900 dark:text-white">
+        {/* Total */}
+        <div className="text-right text-3xl font-black text-gray-400">
           Total: S/. {order.total_amount.toFixed(2)}
         </div>
       </div>
 
       <div className="mt-6 text-center print:hidden">
-        <button onClick={() => window.print()} className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 shadow-md">
+        <button onClick={() => window.print()} className="bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 shadow-md transition">
           Download / Print Receipt
         </button>
       </div>
