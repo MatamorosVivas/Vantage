@@ -27,7 +27,24 @@ const ShopPage = () => {
     <div className="container mx-auto px-6 py-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Our Products</h1>
       
-      {loading && <p>Loading products from the database...</p>}
+      {/* THE NEW SKELETON LOADER */}
+      {loading && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {[1, 2, 3, 4].map((skeleton) => (
+            <div key={skeleton} className="bg-white border border-gray-100 rounded-2xl shadow-sm overflow-hidden flex flex-col animate-pulse">
+              <div className="h-56 bg-gray-200"></div>
+              <div className="p-5 flex flex-col flex-grow">
+                <div className="h-3 bg-gray-200 rounded w-1/3 mb-4"></div>
+                <div className="h-5 bg-gray-200 rounded w-3/4 mb-4"></div>
+                <div className="mt-auto flex justify-between pt-4">
+                  <div className="h-6 bg-gray-200 rounded w-1/3"></div>
+                  <div className="h-8 bg-gray-200 rounded w-1/4"></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
       {error && <p className="text-red-500">{error}</p>}
       
       {!loading && !error && (

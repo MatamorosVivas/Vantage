@@ -12,8 +12,8 @@ import CheckoutPage from './pages/CheckoutPage.jsx';
 import AdminPage from './pages/AdminPage.jsx';
 import ProductDetailsPage from './pages/ProductDetailsPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
+import HomePage from './pages/HomePage.jsx';
 
-const HomePage = () => <div className="text-center mt-20"><h1 className="text-5xl font-black text-blue-900">VANTAGE</h1><p className="mt-4 text-xl text-gray-600">The premium destination for ergonomic imports.</p></div>;
 
 const router = createBrowserRouter([
   {
