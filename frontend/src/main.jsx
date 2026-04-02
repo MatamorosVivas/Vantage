@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
 
+import HomePage from './pages/HomePage.jsx'; // YOUR REAL HOMEPAGE!
 import ShopPage from './pages/ShopPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import { CartProvider } from './context/CartContext.jsx';
@@ -12,10 +13,12 @@ import CheckoutPage from './pages/CheckoutPage.jsx';
 import AdminPage from './pages/AdminPage.jsx';
 import ProductDetailsPage from './pages/ProductDetailsPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
-import HomePage from './pages/HomePage.jsx';
-import ReceiptPage from './pages/ReceiptPage.jsx';
 import OrderHistoryPage from './pages/OrderHistoryPage.jsx';
+import ReceiptPage from './pages/ReceiptPage.jsx';
 
+// Dummy pages for links so they don't crash
+const DummySecurity = () => <div className="text-center mt-20 dark:text-white text-2xl font-bold">Login & Security Settings (Coming Soon)</div>;
+const DummyAddresses = () => <div className="text-center mt-20 dark:text-white text-2xl font-bold">Your Saved Addresses (Coming Soon)</div>;
 
 const router = createBrowserRouter([
   {
@@ -38,11 +41,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CartProvider> {}
+    <CartProvider>
       <RouterProvider router={router} />
     </CartProvider>
   </React.StrictMode>
-); 
+);
